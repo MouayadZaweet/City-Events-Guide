@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title & icon -->
+    <title>دليل فعاليات المدينة | اتصل بنا</title>
+    <link rel="icon" href="assets/img/CITY EVENTS icon.png" />
+
+    <!-- Bootstrap CSS -->
+    <!-- But I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"> -->
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Custom CSS -->
+    <style>
+        /* Body & Header & Footer Formatting in Main CSS: styles.css */
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Page Title */
+        .page-title {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+            .page-title::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 50%;
+                transform: translateX(50%);
+                width: 100px;
+                height: 3px;
+                background-color: var(--accent-color);
+            }
+
+        /* Contact Section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+
+            .contact-info h3 {
+                margin-bottom: 20px;
+                position: relative;
+                padding-bottom: 10px;
+            }
+
+                .contact-info h3::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 2px;
+                    background-color: var(--accent-color);
+                }
+
+        .contact-details {
+            list-style: none;
+            padding: 0;
+        }
+
+            .contact-details li {
+                display: flex;
+                align-items: flex-start;
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+
+            .contact-details i {
+                color: var(--accent-color);
+                font-size: 1.2rem;
+                margin-top: 5px;
+            }
+
+            .contact-details div {
+                flex: 1;
+            }
+
+            .contact-details h4 {
+                margin-bottom: 5px;
+                color: var(--primary-color);
+            }
+
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+            .contact-form h3 {
+                margin-bottom: 20px;
+                position: relative;
+                padding-bottom: 10px;
+            }
+
+                .contact-form h3::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 2px;
+                    background-color: var(--accent-color);
+                }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 8px;
+                font-weight: 500;
+                color: var(--primary-color);
+            }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+            .form-control:focus {
+                outline: none;
+                border-color: var(--accent-color);
+            }
+
+            .form-control.error {
+                border-color: var(--error-color);
+            }
+
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.85rem;
+            margin-top: 5px;
+            display: none;
+        }
+
+            .error-message.show {
+                display: block;
+            }
+
+        .phone-input {
+            display: flex;
+        }
+
+        .phone-prefix {
+            background-color: var(--card-bg);
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-right: none;
+            border-radius: 5px 0 0 5px;
+            color: var(--text-secondary);
+        }
+
+        .phone-input .form-control {
+            border-radius: 0 5px 5px 0;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+            .submit-btn:hover {
+                background-color: var(--accent-color);
+            }
+
+            .submit-btn:disabled {
+                background-color: var(--text-secondary);
+                cursor: not-allowed;
+            }
+
+        .form-message {
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            display: none;
+        }
+
+            .form-message.success {
+                background-color: rgba(16, 185, 129, 0.1);
+                color: var(--success-color);
+                border: 1px solid var(--success-color);
+                display: block;
+            }
+
+            .form-message.error {
+                background-color: rgba(239, 68, 68, 0.1);
+                color: var(--error-color);
+                border: 1px solid var(--error-color);
+                display: block;
+            }
+
+        /* Map Section */
+        .map-section {
+            margin-top: 50px;
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+            .map-container iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+
+        /* Media Queries for Contact Page */
+        @media (max-width: 768px) {
+            .contact-container {
+                flex-direction: column;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="events.html">الفعاليات</a></li>
+                <li><a href="about.html">عن الدليل</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
+            </ul>
+            <a href="index.html" class="logo">
+                <img src="assets/img/CITY EVENTS Logo.png" />
+            </a>
+        </div>
+    </header>
+
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing-page">
+        <!-- Emblem of Syria -->
+        <img src="assets/img/Emblem_of_Syria_2025.png" alt="Logo" class="emblem-of-syria">
+        <!-- Syria Name -->
+        <h3 class="syria-name">الجمهورية العربية السورية</h3>
+        <!-- Welcome Text -->
+        <h2 class="welcome-text">أهلاً وسهلاً بكم</h2>
+        <!-- Platform Name in Arabic -->
+        <h2 class="platform-name-ar">دليل فعاليات المدينة</h2>
+        <!-- Platform Name in English -->
+        <h5 class="platform-name-en">City Events Guide</h5>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="main-content" id="mainContent">
+            <h1 class="page-title">اتصل بنا</h1>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>معلومات التواصل</h3>
+                    <ul class="contact-details">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>العنوان</h4>
+                                <p>دمشق، سوريا</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>الهاتف</h4>
+                                <p style="direction: ltr;">+963 956 22 77 90</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>البريد الإلكتروني</h4>
+                                <p>info@syria-events.com</p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>ساعات العمل</h4>
+                                <p>الأحد - الخميس: 9 ص - 5 م</p>
+                                <p>الجمعة والسبت: مغلق</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact-form">
+                    <h3>أرسل رسالة</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">الاسم الكامل *</label>
+                            <input type="text" id="name" class="form-control" required>
+                            <div class="error-message" id="nameError">الاسم الكامل مطلوب</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">البريد الإلكتروني *</label>
+                            <input type="email" id="email" class="form-control" required>
+                            <div class="error-message" id="emailError">البريد الإلكتروني مطلوب</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">رقم الهاتف *</label>
+                            <div class="phone-input">
+                                <input type="tel" id="phone" class="form-control" required pattern="9[0-9]{8}" maxlength="9">
+                                <span class="phone-prefix">+963</span>
+                            </div>
+                            <div class="error-message" id="phoneError">رقم الهاتف مطلوب ويجب أن يبدأ بـ 9</div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">الرسالة *</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                            <div class="error-message" id="messageError">الرسالة مطلوبة</div>
+                        </div>
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <i class="fas fa-paper-plane"></i>
+                            إرسال الرسالة
+                        </button>
+
+                        <div class="form-message" id="formMessage"></div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="map-section">
+                <h3 class="section-title">موقعنا</h3>
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1672562.850329509!2d35.95492315!3d33.858645!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e6dc413cc6a7%3A0x6b9f66ebd1e394f2!2sDamascus%2C%20Syria!5e0!3m2!1sen!2s!4v1665587150244!5m2!1sen!2s" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>دليل فعاليات المدينة</h3>
+                <p>منصة متخصصة في عرض الفعاليات الثقافية والترفيهية والتعليمية في مختلف مدن سوريا.</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="events.html">الفعاليات</a></li>
+                    <li><a href="about.html">عن الدليل</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تابعنا على</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Mofaexsy" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/syrianmofaex1" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-whatsapp"></i></a>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 دليل فعاليات المدينة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <!-- Same as BS CSS in "head" I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function () {
+            // Contact form validation
+            $('#contactForm').on('submit', function (e) {
+                e.preventDefault();
+
+                var isValid = true;
+                var name = $('#name').val().trim();
+                var email = $('#email').val().trim();
+                var phone = $('#phone').val().trim();
+                var message = $('#message').val().trim();
+
+                // Reset error states
+                $('.form-control').removeClass('error');
+                $('.error-message').removeClass('show');
+
+                // Validate name
+                if (name === '') {
+                    $('#name').addClass('error');
+                    $('#nameError').addClass('show');
+                    isValid = false;
+                }
+
+                // Validate email
+                if (email === '') {
+                    $('#email').addClass('error');
+                    $('#emailError').addClass('show');
+                    isValid = false;
+                } else if (!isValidEmail(email)) {
+                    $('#email').addClass('error');
+                    $('#emailError').text('البريد الإلكتروني غير صحيح').addClass('show');
+                    isValid = false;
+                }
+
+                // Validate phone
+                if (phone === '') {
+                    $('#phone').addClass('error');
+                    $('#phoneError').addClass('show');
+                    isValid = false;
+                } else if (!phone.startsWith('9') || phone.length !== 9 || !/^\d+$/.test(phone)) {
+                    $('#phone').addClass('error');
+                    $('#phoneError').addClass('show');
+                    isValid = false;
+                }
+
+                // Validate message
+                if (message === '') {
+                    $('#message').addClass('error');
+                    $('#messageError').addClass('show');
+                    isValid = false;
+                }
+
+                if (isValid) {
+                    // Disable submit button
+                    $('#submitBtn').prop('disabled', true).html('<i class="fas fa-spinner fa-spin"></i> جاري الإرسال');
+
+                    // Simulate form submission
+                    setTimeout(function () {
+                        $('#formMessage').removeClass('error').addClass('success').text('تم إرسال رسالتك بنجاح. سنتواصل معك قريباً.');
+                        $('#contactForm')[0].reset();
+                        $('#submitBtn').prop('disabled', false).html('<i class="fas fa-paper-plane"></i> إرسال الرسالة');
+                    }, 2000);
+                }
+            });
+
+            function isValidEmail(email) {
+                var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+
+            // Phone input validation on blur
+            $('#phone').on('blur', function () {
+                var phone = $(this).val().trim();
+
+                if (phone !== '' && (!phone.startsWith('9') || phone.length !== 9 || !/^\d+$/.test(phone))) {
+                    $(this).addClass('error');
+                    $('#phoneError').addClass('show');
+                } else {
+                    $(this).removeClass('error');
+                    $('#phoneError').removeClass('show');
+                }
+            });
+
+            // Real-time validation for other fields
+            $('#name, #email, #message').on('input', function () {
+                var value = $(this).val().trim();
+
+                if (value !== '') {
+                    $(this).removeClass('error');
+                    $(this).next('.error-message').removeClass('show');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title & icon -->
+    <title>دليل فعاليات المدينة | التفاصيل</title>
+    <link rel="icon" href="assets/img/CITY EVENTS icon.png" />
+
+    <!-- Bootstrap CSS -->
+    <!-- But I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"> -->
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <!-- Custom CSS -->
+    <style>
+        /* Body & Header & Footer Formatting in Main CSS: styles.css */
+
+        main {
+            flex: 1;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* Event Detail Styles */
+        .event-detail {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .event-hero {
+            position: relative;
+            height: 400px;
+            overflow: hidden;
+        }
+
+            .event-hero img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .event-hero-content {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(5, 66, 57, 0.8), transparent);
+            color: white;
+        }
+
+        .event-hero-date {
+            display: table;
+            padding: 0.3rem 0.6rem 0.1rem 0.6rem;
+            border-radius: 10px;
+            background-color: var(--primary-color);
+            color: var(--accent-color);
+            font-size: 1rem;
+            margin-bottom: 10px;
+        }
+
+        .event-hero-title {
+            display: table;
+            padding: 0.4rem 0.6rem 0.2rem 0.6rem;
+            border-radius: 10px;
+            background-color: var(--accent-color);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .event-hero-location {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .event-hero-date {
+                font-size: 0.9rem;
+            }
+
+            .event-hero-title {
+                font-size: 1.8rem;
+            }
+
+            .event-hero-location {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .event-hero-date {
+                font-size: 0.7rem;
+            }
+
+            .event-hero-title {
+                font-size: 1.5rem;
+            }
+
+            .event-hero-location {
+                font-size: 0.8rem;
+            }
+        }
+
+        .event-content {
+            padding: 30px;
+        }
+
+        .event-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background-color: var(--card-bg);
+            padding: 10px 15px;
+            border-radius: 5px;
+            min-width: 200px;
+        }
+
+            .info-item i {
+                color: var(--accent-color);
+                font-size: 1.2rem;
+            }
+
+        .event-description {
+            margin-bottom: 30px;
+            line-height: 1.8;
+        }
+
+            .event-description h3 {
+                margin-bottom: 15px;
+                position: relative;
+                padding-bottom: 10px;
+            }
+
+                .event-description h3::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 2px;
+                    background-color: var(--accent-color);
+                }
+
+        .event-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .action-btn {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+            .btn-primary:hover {
+                background-color: var(--accent-color);
+            }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+            .btn-secondary:hover {
+                background-color: var(--card-bg);
+            }
+
+        /* Related Events */
+        .related-events {
+            margin-top: 50px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+            .section-title::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                right: 50%;
+                transform: translateX(50%);
+                width: 100px;
+                height: 3px;
+                background-color: var(--accent-color);
+            }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .related-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+            .related-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .related-image {
+            height: 180px;
+            overflow: hidden;
+        }
+
+            .related-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+        .related-content {
+            padding: 20px;
+        }
+
+        .related-date {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .related-title {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .related-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+            .related-link:hover {
+                color: var(--accent-color);
+            }
+
+        /* Media Queries for Event Detail */
+        @media (max-width: 768px) {
+            .event-hero {
+                height: 300px;
+            }
+
+            .event-hero-title {
+                font-size: 1.5rem;
+            }
+
+            .event-info {
+                flex-direction: column;
+            }
+
+            .info-item {
+                min-width: 100%;
+            }
+
+            .event-actions {
+                flex-direction: column;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-container">
+            <div class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="events.html">الفعاليات</a></li>
+                <li><a href="about.html">عن الدليل</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+            <a href="index.html" class="logo">
+                <img src="assets/img/CITY EVENTS Logo.png" />
+            </a>
+        </div>
+    </header>
+
+    <!-- Landing Page -->
+    <div id="landingPage" class="landing-page">
+        <!-- Emblem of Syria -->
+        <img src="assets/img/Emblem_of_Syria_2025.png" alt="Logo" class="emblem-of-syria">
+        <!-- Syria Name -->
+        <h3 class="syria-name">الجمهورية العربية السورية</h3>
+        <!-- Welcome Text -->
+        <h2 class="welcome-text">أهلاً وسهلاً بكم</h2>
+        <!-- Platform Name in Arabic -->
+        <h2 class="platform-name-ar">دليل فعاليات المدينة</h2>
+        <!-- Platform Name in English -->
+        <h5 class="platform-name-en">City Events Guide</h5>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <div class="main-content" id="mainContent">
+            <div class="event-detail" id="eventDetail">
+                <!-- Event content will be populated by JS -->
+            </div>
+
+            <div class="related-events" id="relatedEvents">
+                <h2 class="section-title">فعاليات ذات صلة</h2>
+                <div class="related-grid" id="relatedGrid">
+                    <!-- Related events will be populated by JS -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>دليل فعاليات المدينة</h3>
+                <p>منصة متخصصة في عرض الفعاليات الثقافية والترفيهية والتعليمية في مختلف مدن سوريا.</p>
+            </div>
+            <div class="footer-section">
+                <h3>روابط سريعة</h3>
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="events.html">الفعاليات</a></li>
+                    <li><a href="about.html">عن الدليل</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>تابعنا على</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/Mofaexsy" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href=""><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/syrianmofaex1" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href=""><i class="fab fa-whatsapp"></i></a>
+                    <a href=""><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 دليل فعاليات المدينة. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <!-- Same as BS CSS in "head" I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!-- Main JS -->
+    <script src="assets/js/main.js"></script>
+    <!-- Custom JS -->
+    <script>
+        $(document).ready(function () {
+            // Event detail page functionality
+            function initEventDetail() {
+                // Get event ID from URL
+                var urlParams = new URLSearchParams(window.location.search);
+                var eventId = urlParams.get('id');
+
+                if (!eventId) {
+                    window.location.href = 'events.html';
+                    return;
+                }
+
+                // Find event by ID
+                var event = eventsData.find(e => e.id == eventId);
+
+                if (!event) {
+                    $('#eventDetail').html('<div class="no-event" style="padding: 40px; text-align: center;">الفعالية غير موجودة</div>');
+                    $('#relatedEvents').hide();
+                    return;
+                }
+
+                // Display event details
+                var eventHtml = `
+                                                    <div class="event-hero">
+                                                        <img src="assets/img/events/${event.image}" alt="${event.title}">
+                                                        <div class="event-hero-content">
+                                                            <div class="event-hero-date">${event.date}</div>
+                                                            <h1 class="event-hero-title">${event.title}</h1>
+                                                            <div class="event-hero-location">
+                                                                <i class="fas fa-map-marker-alt"></i>
+                                                                ${event.location} - ${event.city}
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="event-content">
+                                                        <div class="event-info">
+                                                            <div class="info-item">
+                                                                <i class="fas fa-tag"></i>
+                                                                <span>${event.category}</span>
+                                                            </div>
+                                                            <div class="info-item">
+                                                                <i class="fas fa-calendar-alt"></i>
+                                                                <span>${event.date}</span>
+                                                            </div>
+                                                            <div class="info-item">
+                                                                <i class="fas fa-clock"></i>
+                                                                <span>${event.time}</span>
+                                                            </div>
+                                                            <div class="info-item">
+                                                                <i class="fas fa-ticket-alt"></i>
+                                                                <span>${event.price === '0' ? 'مجاني' : event.price + ' ل.س'}</span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="event-description">
+                                                            <h3>عن الفعالية</h3>
+                                                            <p>${event.description}</p>
+                                                        </div>
+                                                        <div class="event-actions">
+                                                            <button class="action-btn btn-primary">
+                                                                <i class="fas fa-calendar-plus"></i>
+                                                                أضف إلى التقويم
+                                                            </button>
+                                                            <button class="action-btn btn-secondary">
+                                                                <i class="fas fa-share-alt"></i>
+                                                                مشاركة
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                `;
+
+                $('#eventDetail').html(eventHtml);
+
+                // Display related events
+                var relatedEvents = eventsData.filter(e =>
+                    e.id != eventId &&
+                    (e.category === event.category || e.city === event.city)
+                ).slice(0, 3);
+
+                if (relatedEvents.length > 0) {
+                    var relatedHtml = '';
+
+                    relatedEvents.forEach(relatedEvent => {
+                        relatedHtml += `
+                            <div class="related-card">
+                                <div class="related-image">
+                                    <img src="assets/img/events/${relatedEvent.image}" alt="${relatedEvent.title}">
+                                </div>
+                                <div class="related-content">
+                                    <div class="related-date">${relatedEvent.date}</div>
+                                    <h3 class="related-title">${relatedEvent.title}</h3>
+                                    <a href="event.html?id=${relatedEvent.id}" class="related-link">عرض التفاصيل</a>
+                                </div>
+                            </div>
+                        `;
+                    });
+
+                    $('#relatedGrid').html(relatedHtml);
+                } else {
+                    $('#relatedEvents').hide();
+                }
+            }
+
+            // Initialize event detail when events data is available
+            if (typeof eventsData !== 'undefined') {
+                initEventDetail();
+            } else {
+                // Wait for main.js to load
+                var checkData = setInterval(function () {
+                    if (typeof eventsData !== 'undefined') {
+                        clearInterval(checkData);
+                        initEventDetail();
+                    }
+                }, 100);
+            }
+        });
+    </script>
+</body>
+
+</html>
+
+
+
