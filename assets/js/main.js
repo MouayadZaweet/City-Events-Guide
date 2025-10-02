@@ -11,7 +11,8 @@ var eventsData = [
         price: "0",
         description: "معرض دمشق الدولي هو أحد أقدم وأهم المعارض في المنطقة، يضم مشاركات من مختلف الدول العربية والأجنبية ويعرض أحدث المنتجات والتقنيات في مجالات متعددة.",
         image: "damascus_exhibition.webp",
-        featured: true
+        featured: true,
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.522158214074!2d36.2765279!3d33.513807299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e16302cf2971%3A0xa5ef0ce61ef01516!2z2YXYr9mK2YbYqSDYp9mE2YXYudin2LHYtg!5e0!3m2!1sen!2s!4v1759406355548!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     },
     {
         id: 2,
@@ -24,7 +25,8 @@ var eventsData = [
         price: "0",
         description: "مهرجان بصرى الدولي للفنون المسرحية والموسيقية، يقام في المسرح الروماني الأثري ببصرى ويضم عروضاً محلية وعربية ودولية.",
         image: "bosra_festival.webp",
-        featured: true
+        featured: true,
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3364.317017081226!2d36.478827675493264!3d32.517679073773024!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151bced7bd045a2b%3A0xadef0df71dcf588c!2sRoman%20Theater%2C%20Bosra%20Archaeological%20Site!5e0!3m2!1sen!2s!4v1759406453077!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     },
     {
         id: 3,
@@ -37,7 +39,8 @@ var eventsData = [
         price: "90000",
         description: "ماراثون رياضي بمشاركة محلية ودولية، يشمل مسارات مختلفة للمحترفين والهواة، ويهدف إلى نشر ثقافة الرياضة والصحة بين جميع الفئات.",
         image: "damascus_marathon.webp",
-        featured: true
+        featured: true,
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.672438530773!2d36.291030975536344!3d33.50989847336591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e0cd2d5371eb%3A0x550832f5cd4052d5!2sFayez%20Mansour!5e0!3m2!1sen!2s!4v1759406530477!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     },
     {
         id: 4,
@@ -50,7 +53,8 @@ var eventsData = [
         price: "0",
         description: "مهرجان الوادي للسياحة يشمل معارض للصناعات التقليدية والحرف اليدوية، وعروض فنية وتراثية، وأنشطة ترفيهية للعائلة.",
         image: "wadi_festival.webp",
-        featured: false
+        featured: false,
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d26214.914032388417!2d36.26754355232001!3d34.78419249398931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1z2YLZhNi52Kkg2KfZhNit2LXZhg!5e0!3m2!1sen!2s!4v1759406865268!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     },
     {
         id: 5,
@@ -63,7 +67,8 @@ var eventsData = [
         price: "10000",
         description: "مؤتمر يهدف إلى عرض أحدث التطورات التكنولوجية والابتكارات في مجال تكنولوجيا المعلومات والاتصالات، بمشاركة خبراء محليين ودوليين.",
         image: "tech_conference.webp",
-        featured: true
+        featured: true,
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.5140569373916!2d36.28008118264441!3d33.514018004686456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e7355fec23c1%3A0x3f951decdbfa1342!2sDama%20Rose%20Hotel!5e0!3m2!1sen!2s!4v1759406919997!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     },
     {
         id: 6,
@@ -76,7 +81,8 @@ var eventsData = [
         price: "500",
         description: "معرض متخصص بالزهور والنباتات بمختلف أنواعها، يضم مشاتل ومنتجين محليين، وورش عمل عن الزراعة المنزلية والعناية بالنباتات.",
         image: "flowers_exhibition.webp",
-        featured: false
+        featured: false,
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.320533528836!2d36.28589047553685!3d33.51905097336236!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e7371b99333b%3A0xa5b08ff9776cf675!2sSibky%20Park!5e0!3m2!1sen!2s!4v1759406973047!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     },
     {
         id: 7,
@@ -89,7 +95,8 @@ var eventsData = [
         price: "2000",
         description: "مهرجان سينمائي يعرض أفلاماً سورية وعربية ودولية، ويشمل ندوات وورش عمل عن صناعة السينما، ويقام في دار الفيحاء للثقافة باللاذقية.",
         image: "cinema_festival.webp",
-        featured: false
+        featured: false,
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3247.4969921067795!2d35.7742987756272!3d35.51671417264082!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1526adb646e9b765%3A0xa16794f09265fb20!2sNational%20Theatre%20Center%20of%20Lattakia!5e0!3m2!1sen!2s!4v1759407159615!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     },
     {
         id: 8,
@@ -102,7 +109,8 @@ var eventsData = [
         price: "1000",
         description: "معرض الكتاب الدولي في دمشق يضم مئات دور النشر المحلية والعربية والعالمية، ويقدم أنشطة ثقافية متنوعة وندوات وورش عمل.",
         image: "book_fair.webp",
-        featured: false
+        featured: false,
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6653.0362562747605!2d36.27132701316454!3d33.5139121177052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e16302cf2971%3A0xa5ef0ce61ef01516!2z2YXYr9mK2YbYqSDYp9mE2YXYudin2LHYtg!5e0!3m2!1sen!2s!4v1759408416100!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     }
 ];
 
