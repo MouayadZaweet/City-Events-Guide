@@ -303,6 +303,42 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* Map Section */
+        .map-section {
+            margin-top: 50px;
+            margin-bottom: 75px;
+             
+        }
+            .map-section h3{
+                margin-bottom: 15px;
+                position: relative;
+                padding-bottom: 10px;
+
+        }
+                .map-section h3::after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 2px;
+                    background-color: var(--accent-color);
+                    
+                }
+
+        .map-container {
+            margin-top: 35px;
+            height: 400px;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+            .map-container iframe {
+                width: 100%;
+                height: 100%;
+            }
     </style>
 </head>
 <body>
@@ -456,6 +492,13 @@
                                                         <div class="event-description">
                                                             <h3>عن الفعالية</h3>
                                                             <p>${event.description}</p>
+                                                        </div>
+                                                        
+                                                        <div class="map-section">
+                                                            <h3>قم بزيارتنا</h3>
+                                                            <div class="map-container">
+                                                                ${event.map_frame}
+                                                            </div>
                                                         </div>
                                                         <div class="event-actions">
                                                             <button class="action-btn btn-primary">
