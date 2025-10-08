@@ -12,7 +12,7 @@ var eventsData = [
         description: "معرض دمشق الدولي هو أحد أقدم وأهم المعارض في المنطقة، يضم مشاركات من مختلف الدول العربية والأجنبية ويعرض أحدث المنتجات والتقنيات في مجالات متعددة.",
         image: "damascus_exhibition.webp",
         featured: true,
-        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.522158214074!2d36.2765279!3d33.513807299999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e16302cf2971%3A0xa5ef0ce61ef01516!2z2YXYr9mK2YbYqSDYp9mE2YXYudin2LHYtg!5e0!3m2!1sen!2s!4v1759406355548!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.831308411242!2d36.38838171958924!3d33.42764208408412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e2583fffffff%3A0x3cf379285bd36740!2sFairgrounds!5e0!3m2!1sen!2sde!4v1759883932858!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     },
     {
         id: 2,
@@ -40,14 +40,14 @@ var eventsData = [
         description: "ماراثون رياضي بمشاركة محلية ودولية، يشمل مسارات مختلفة للمحترفين والهواة، ويهدف إلى نشر ثقافة الرياضة والصحة بين جميع الفئات.",
         image: "damascus_marathon.webp",
         featured: true,
-        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3326.672438530773!2d36.291030975536344!3d33.50989847336591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e0cd2d5371eb%3A0x550832f5cd4052d5!2sFayez%20Mansour!5e0!3m2!1sen!2s!4v1759406530477!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d17870.47614313175!2d36.24516000341931!3d33.50166461156043!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e0a63e0b83ad%3A0x29407d81f19a40f7!2sFayez%20Mansour%2C%20Syria!5e0!3m2!1sen!2sde!4v1759883994332!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     },
     {
         id: 4,
         title: "مهرجان الوادي للسياحة",
         date: "2025-07-20",
         time: "08:00 صباحاً - 08:00 مساءً",
-        location: "وادي النضارة",
+        location: "وادي النصارى",
         city: "حمص",
         category: "مهرجانات",
         price: "0",
@@ -110,7 +110,7 @@ var eventsData = [
         description: "معرض الكتاب الدولي في دمشق يضم مئات دور النشر المحلية والعربية والعالمية، ويقدم أنشطة ثقافية متنوعة وندوات وورش عمل.",
         image: "book_fair.webp",
         featured: false,
-        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6653.0362562747605!2d36.27132701316454!3d33.5139121177052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e16302cf2971%3A0xa5ef0ce61ef01516!2z2YXYr9mK2YbYqSDYp9mE2YXYudin2LHYtg!5e0!3m2!1sen!2s!4v1759408416100!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
+        map_frame: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3329.831308411242!2d36.38838171958924!3d33.42764208408412!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e2583fffffff%3A0x3cf379285bd36740!2sFairgrounds!5e0!3m2!1sen!2sde!4v1759883932858!5m2!1sen!2sde" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>'
     }
 ];
 
