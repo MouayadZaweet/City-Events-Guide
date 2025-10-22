@@ -8,8 +8,7 @@
     <link rel="icon" href="assets/img/CITY EVENTS icon.png" />
 
     <!-- Bootstrap CSS -->
-    <!-- But I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"> 
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
@@ -160,7 +159,10 @@
                     height: 2px;
                     background-color: var(--accent-color);
                 }
-
+                    html[dir="ltr"] .event-description h3::after {
+                        right: auto;
+                        left: 0;
+                    }
         .event-actions {
             display: flex;
             gap: 15px;
@@ -220,7 +222,6 @@
                 height: 3px;
                 background-color: var(--accent-color);
             }
-
         .related-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -325,6 +326,10 @@
                     background-color: var(--accent-color);
                     
                 }
+                html[dir="ltr"] .map-section h3::after {
+                        right: auto;
+                        left: 0;
+                    }
 
         .map-container {
             margin-top: 35px;
@@ -344,15 +349,21 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="header-container">
+        <div class="header-container" dir="rtl">
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="events.html">الفعاليات</a></li>
-                <li><a href="about.html">عن الدليل</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
+                <li>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="languageToggle">
+                        <label class="toggle-label" for="languageToggle" data-label-left="العربية" data-label-right="English"></label>
+                    </div>
+                </li>
+                <li><a href="index.html" data-lang="home"></a></li>
+                <li><a href="events.html"class="active" data-lang="events"></a></li>
+                <li><a href="about.html" data-lang="about"></a></li>
+                <li><a href="contact.html" data-lang="contact"></a></li>
             </ul>
             <a href="index.html" class="logo">
                 <img src="assets/img/CITY EVENTS Logo.png" />
@@ -365,9 +376,9 @@
         <!-- Emblem of Syria -->
         <img src="assets/img/Emblem_of_Syria_2025.png" alt="Logo" class="emblem-of-syria">
         <!-- Syria Name -->
-        <h3 class="syria-name">الجمهورية العربية السورية</h3>
+        <h3 class="syria-name"> Syrian Arab Republic | الجمهورية العربية السورية</h3>
         <!-- Welcome Text -->
-        <h2 class="welcome-text">أهلاً وسهلاً بكم</h2>
+        <h2 class="welcome-text">Welcome | أهلاً وسهلاً بكم</h2>
         <!-- Platform Name in Arabic -->
         <h2 class="platform-name-ar">دليل فعاليات المدينة</h2>
         <!-- Platform Name in English -->
@@ -382,7 +393,7 @@
             </div>
 
             <div class="related-events" id="relatedEvents">
-                <h2 class="section-title">فعاليات ذات صلة</h2>
+                <h2 class="section-title" data-lang="related"></h2>
                 <div class="related-grid" id="relatedGrid">
                     <!-- Related events will be populated by JS -->
                 </div>
@@ -399,20 +410,20 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h3>دليل فعاليات المدينة</h3>
-                <p>منصة متخصصة في عرض الفعاليات الثقافية والترفيهية والتعليمية في مختلف مدن سوريا.</p>
+                <h3 data-lang="site name"></h3>
+                <p data-lang="platform description"></p>
             </div>
             <div class="footer-section">
-                <h3>روابط سريعة</h3>
+                <h3 data-lang="quick links"></h3>
                 <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="events.html">الفعاليات</a></li>
-                    <li><a href="about.html">عن الدليل</a></li>
-                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="index.html" data-lang="home"></a></li>
+                    <li><a href="events.html" data-lang="events"></a></li>
+                    <li><a href="about.html" data-lang="about"></a></li>
+                    <li><a href="contact.html" data-lang="contact"></a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>تابعنا على</h3>
+                <h3 data-lang="follow us"></h3>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/Mofaexsy" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href=""><i class="fab fa-twitter"></i></a>
@@ -423,13 +434,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 دليل فعاليات المدينة. جميع الحقوق محفوظة.</p>
+            <p data-lang="copyright"></p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
-    <!-- Same as BS CSS in "head" I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Main JS -->
@@ -438,18 +448,21 @@
     <script>
         $(document).ready(function () {
             // Event detail page functionality
+            var tmp_toggle = document.getElementById('languageToggle');
+            var tmp_lang = tmp_toggle.checked ? 'en' : 'ar';
             function initEventDetail() {
                 // Get event ID from URL
                 var urlParams = new URLSearchParams(window.location.search);
                 var eventId = urlParams.get('id');
-
+                //Get language selection
+                
                 if (!eventId) {
                     window.location.href = 'events.html';
                     return;
                 }
 
                 // Find event by ID
-                var event = eventsData.find(e => e.id == eventId);
+                var event = eventsData[tmp_lang].find(e => e.id == eventId);
 
                 if (!event) {
                     $('#eventDetail').html('<div class="no-event" style="padding: 40px; text-align: center;">الفعالية غير موجودة</div>');
@@ -486,16 +499,17 @@
                                                             </div>
                                                             <div class="info-item">
                                                                 <i class="fas fa-ticket-alt"></i>
-                                                                <span>${event.price === '0' ? 'مجاني' : event.price + ' ل.س'}</span>
+                                                            
+                                                                <span>${event.price === '0' ? (tmp_lang=="en"?"Free":"مجاني") : event.price + (tmp_lang=="en"?" SP":" ل.س")}</span>
                                                             </div>
                                                         </div>
                                                         <div class="event-description">
-                                                            <h3>عن الفعالية</h3>
+                                                            <h3>${tmp_lang=="en"?"About the event":"عن الفعالية"}</h3>
                                                             <p>${event.description}</p>
                                                         </div>
                                                         
                                                         <div class="map-section">
-                                                            <h3>قم بزيارتنا</h3>
+                                                            <h3>${tmp_lang=="en"?"Visit us":"قم بزيارتنا"}</h3>
                                                             <div class="map-container">
                                                                 ${event.map_frame}
                                                             </div>
@@ -503,11 +517,11 @@
                                                         <div class="event-actions">
                                                             <button class="action-btn btn-primary">
                                                                 <i class="fas fa-calendar-plus"></i>
-                                                                أضف إلى التقويم
+                                                            ${tmp_lang=="en"?"Add to calendar":"أضف إلى التقويم"}  
                                                             </button>
                                                             <button class="action-btn btn-secondary">
                                                                 <i class="fas fa-share-alt"></i>
-                                                                مشاركة
+                                                                ${tmp_lang=="en"?"Share":"مشاركة"}
                                                             </button>
                                                         </div>
                                                     </div>
@@ -516,7 +530,7 @@
                 $('#eventDetail').html(eventHtml);
 
                 // Display related events
-                var relatedEvents = eventsData.filter(e =>
+                var relatedEvents = eventsData[tmp_lang].filter(e =>
                     e.id != eventId &&
                     (e.category === event.category || e.city === event.city)
                 ).slice(0, 3);
@@ -533,7 +547,7 @@
                                 <div class="related-content">
                                     <div class="related-date">${relatedEvent.date}</div>
                                     <h3 class="related-title">${relatedEvent.title}</h3>
-                                    <a href="event.html?id=${relatedEvent.id}" class="related-link">عرض التفاصيل</a>
+                                    <a href="event.html?id=${relatedEvent.id}" class="related-link">${tmp_lang=="en"?"Show details":"عرض التفاصيل"}</a>
                                 </div>
                             </div>
                         `;
@@ -546,12 +560,12 @@
             }
 
             // Initialize event detail when events data is available
-            if (typeof eventsData !== 'undefined') {
+            if (typeof eventsData[tmp_lang] !== 'undefined') {
                 initEventDetail();
             } else {
                 // Wait for main.js to load
                 var checkData = setInterval(function () {
-                    if (typeof eventsData !== 'undefined') {
+                    if (typeof eventsData[tmp_lang] !== 'undefined') {
                         clearInterval(checkData);
                         initEventDetail();
                     }

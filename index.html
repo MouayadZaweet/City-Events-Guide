@@ -4,12 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Title & icon -->
-    <title>دليل فعاليات المدينة | الرئيسية</title>
+    <title data-lang = "site title"></title>
     <link rel="icon" href="assets/img/CITY EVENTS icon.png" />
 
-    <!-- Bootstrap CSS -->
-    <!-- But I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
@@ -436,20 +434,29 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="header-container">
+        <div class="header-container" dir="rtl">
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="active">الرئيسية</a></li>
-                <li><a href="events.html">الفعاليات</a></li>
-                <li><a href="about.html">عن الدليل</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
+                <!-- Toggle Button to change language using Bootstrap -->
+                <li>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="languageToggle">
+                        <label class="toggle-label" for="languageToggle" data-label-left="العربية" data-label-right="English"></label>
+                    </div>
+                </li>
+                <li><a href="index.html" class="active" data-lang="home"></a></li>
+                <li><a href="events.html" data-lang="events"></a></li>
+                <li><a href="about.html" data-lang="about"></a></li>
+                <li><a href="contact.html" data-lang="contact"></a></li>
+                
             </ul>
             <a href="index.html" class="logo">
                 <img src="assets/img/CITY EVENTS Logo.png" />
             </a>
         </div>
+        
     </header>
 
     <!-- Landing Page -->
@@ -457,9 +464,9 @@
         <!-- Emblem of Syria -->
         <img src="assets/img/Emblem_of_Syria_2025.png" alt="Logo" class="emblem-of-syria">
         <!-- Syria Name -->
-        <h3 class="syria-name">الجمهورية العربية السورية</h3>
+        <h3 class="syria-name"> Syrian Arab Republic | الجمهورية العربية السورية</h3>
         <!-- Welcome Text -->
-        <h2 class="welcome-text">أهلاً وسهلاً بكم</h2>
+        <h2 class="welcome-text">Welcome | أهلاً وسهلاً بكم</h2>
         <!-- Platform Name in Arabic -->
         <h2 class="platform-name-ar">دليل فعاليات المدينة</h2>
         <!-- Platform Name in English -->
@@ -471,9 +478,8 @@
         <!-- Team Section -->
         <div class="collapsible-section">
             <div class="collapsible-header">
-                <h3 class="collapsible-title">
+                <h3 class="collapsible-title" data-lang="team-title">
                     <i class="fas fa-users"></i>
-                    طاقم العمل
                 </h3>
                 <i class="fas fa-chevron-down collapsible-icon"></i>
             </div>
@@ -481,33 +487,33 @@
                 <div class="team-container">
                     <div class="team-row">
                         <div class="team-member">
-                            <h4 class="member-name">مؤيد زعويط</h4>
+                            <h4 class="member-name" data-lang="mouayad zaweet"></h4>
                             <div class="member-uni">mouayad_289126</div>
-                            <span class="member-role">المطور الرئيسي والمنسق</span>
+                            <span class="member-role" data-lang="lead developer"></span>
                         </div>
                         <div class="team-member">
-                            <h4 class="member-name">محمد ادريس</h4>
+                            <h4 class="member-name" data-lang="mohammad idris"></h4>
                             <div class="member-uni">mohammad_298438</div>
-                            <span class="member-role">مساعد تطوير</span>
+                            <span class="member-role" data-lang="assistant developer"></span>
                         </div>
                     </div>
                     <div class="team-row">
                         <div class="team-member">
-                            <h4 class="member-name">منى مراد</h4>
+                            <h4 class="member-name" data-lang="mona morad"></h4>
                             <div class="member-uni">mona_304431</div>
-                            <span class="member-role">مساعد تصميم</span>
+                            <span class="member-role" data-lang="assistant designer"></span>
                         </div>
                         <div class="team-member">
-                            <h4 class="member-name">علاء خضر</h4>
+                            <h4 class="member-name" data-lang="alaa khedr"></h4>
                             <div class="member-uni">alaa_313929</div>
-                            <span class="member-role">تعبئة المحتوى</span>
+                            <span class="member-role" data-lang="content creator"></span>
                         </div>
                     </div>
                     <div class="team-row">
                         <div class="team-member">
-                            <h4 class="member-name">قيس أبو راس</h4>
+                            <h4 class="member-name" data-lang="kais abo-ras"></h4>
                             <div class="member-uni">kais_261220</div>
-                            <span class="member-role">عمليات الإختبار</span>
+                            <span class="member-role" data-lang="tester"></span>
                         </div>
                     </div>
                 </div>
@@ -518,7 +524,7 @@
     <!-- Main Content -->
     <main>
         <div class="main-content" id="mainContent">
-            <h1 class="page-title">أبرز الفعاليات</h1>
+            <h1 class="page-title" data-lang="main events title"></h1>
 
             <!-- Hero Slider -->
             <div class="hero-slider" id="heroSlider">
@@ -527,7 +533,7 @@
 
             <!-- Explore Button -->
             <div class="explore-btn-container">
-                <a href="events.html" class="explore-btn">استكشف الفعاليات الآن</a>
+                <a href="events.html" class="explore-btn" data-lang="explore button"></a>
             </div>
         </div>
     </main>
@@ -541,20 +547,20 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h3>دليل فعاليات المدينة</h3>
-                <p>منصة متخصصة في عرض الفعاليات الثقافية والترفيهية والتعليمية في مختلف مدن سوريا.</p>
+                <h3 data-lang="site name"></h3>
+                <p data-lang="platform description"></p>
             </div>
             <div class="footer-section">
-                <h3>روابط سريعة</h3>
+                <h3 data-lang="quick links"></h3>
                 <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="events.html">الفعاليات</a></li>
-                    <li><a href="about.html">عن الدليل</a></li>
-                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="index.html" data-lang="home"></a></li>
+                    <li><a href="events.html" data-lang="events"></a></li>
+                    <li><a href="about.html" data-lang="about"></a></li>
+                    <li><a href="contact.html" data-lang="contact"></a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>تابعنا على</h3>
+                <h3 data-lang="follow us"></h3>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/Mofaexsy" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href=""><i class="fab fa-twitter"></i></a>
@@ -565,19 +571,24 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 دليل فعاليات المدينة. جميع الحقوق محفوظة.</p>
+            <p data-lang="copyright"></p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
-    <!-- Same as BS CSS in "head" I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Main JS -->
     <script src="assets/js/main.js"></script>
     <!-- Custom JS -->
+    
+    
+    
+    
     <script>
+        
+
         $(document).ready(function () {
 
             // Collapsible Team Section functionality
@@ -606,11 +617,11 @@
 
             // Initialize team section
             initTeamSection();
-
+            var tmp_lang = localStorage.getItem('preferredLang') || 'en';
             // Hero Slider functionality
             function initHeroSlider() {
                 // Get featured events ((( first 3 events Only )))
-                var featuredEvents = eventsData.filter(event => event.featured).slice(0, 3);
+                var featuredEvents = eventsData[tmp_lang].filter(event => event.featured).slice(0, 3);
 
                 var sliderHtml = '';
                 var dotsHtml = '';
@@ -666,12 +677,12 @@
             }
 
             // Initialize slider when events data is available
-            if (typeof eventsData !== 'undefined') {
+            if (typeof eventsData[tmp_lang] !== 'undefined') {
                 initHeroSlider();
             } else {
                 // Wait for main.js to load
                 var checkData = setInterval(function () {
-                    if (typeof eventsData !== 'undefined') {
+                    if (typeof eventsData[tmp_lang] !== 'undefined') {
                         clearInterval(checkData);
                         initHeroSlider();
                     }

@@ -8,8 +8,7 @@
     <link rel="icon" href="assets/img/CITY EVENTS icon.png" />
 
     <!-- Bootstrap CSS -->
-    <!-- But I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
@@ -69,6 +68,11 @@
                     width: 50px;
                     height: 2px;
                     background-color: var(--accent-color);
+                }
+                html[dir="ltr"] .about-section h2::after {
+                    right:auto;
+                    left:0;
+
                 }
 
         .about-content {
@@ -138,11 +142,22 @@
                     position: absolute;
                     right: 0;
                 }
+                html[dir="ltr"] .policies-list li::before {
+                    right:auto;
+                    left:-5px;
+                    position: relative;
+
+                }
 
         /* Media Queries for About Page */
         @media (max-width: 768px) {
             .mvp-container {
                 flex-direction: column;
+            }
+            .nav-menu li {
+                margin: 15px 0;
+                width: 100%;
+                place-items: center;
             }
         }
     </style>
@@ -150,15 +165,20 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="header-container">
+        <div class="header-container" dir="rtl">
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="events.html">الفعاليات</a></li>
-                <li><a href="about.html" class="active">عن الدليل</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
+                <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="languageToggle">
+                        <label class="toggle-label" for="languageToggle" data-label-left="العربية" data-label-right="English"></label>
+                    </div>
+                </li>
+                <li><a href="index.html" data-lang="home"></a></li>
+                <li><a href="events.html" data-lang="events"></a></li>
+                <li><a href="about.html" class="active" data-lang="about"></a></li>
+                <li><a href="contact.html" data-lang="contact"></a></li>
             </ul>
             <a href="index.html" class="logo">
                 <img src="assets/img/CITY EVENTS Logo.png" />
@@ -171,9 +191,9 @@
         <!-- Emblem of Syria -->
         <img src="assets/img/Emblem_of_Syria_2025.png" alt="Logo" class="emblem-of-syria">
         <!-- Syria Name -->
-        <h3 class="syria-name">الجمهورية العربية السورية</h3>
+        <h3 class="syria-name"> Syrian Arab Republic | الجمهورية العربية السورية</h3>
         <!-- Welcome Text -->
-        <h2 class="welcome-text">أهلاً وسهلاً بكم</h2>
+        <h2 class="welcome-text">Welcome | أهلاً وسهلاً بكم</h2>
         <!-- Platform Name in Arabic -->
         <h2 class="platform-name-ar">دليل فعاليات المدينة</h2>
         <!-- Platform Name in English -->
@@ -183,46 +203,46 @@
     <!-- Main Content -->
     <main>
         <div class="main-content" id="mainContent">
-            <h1 class="page-title">عن دليل فعاليات سوريا</h1>
+            <h1 class="page-title" data-lang="abouttitle"></h1>
 
             <div class="about-section">
-                <h2>مرحباً بكم في دليل فعاليات سوريا</h2>
+                <h2 data-lang="aboutwelcome"></h2>
                 <div class="about-content">
-                    <p>دليل فعاليات سوريا هو منصة رائدة تهدف إلى جمع ونشر المعلومات عن الفعاليات الثقافية والترفيهية والتعليمية في مختلف مدن سوريا. نسعى إلى إحياء الحركة الثقافية والفنية في سوريا بعد سنوات من التحديات، وإبراز الإبداع السوري في مختلف المجالات.</p>
-                    <p>نؤمن بأن الثقافة والفنون هي جسر للتواصل بين الشعوب ووسيلة لإحياء التراث وتعزيز الهوية الوطنية. من خلال هذا الدليل، نتيح للجمهور فرصة الاستفادة من الفعاليات المتنوعة التي تقام في سوريا والمشاركة في بناء مجتمع مثقف وواعي.</p>
+                    <p data-lang="aboutcontent1"></p>
+                    <p data-lang="aboutcontent2"></p>
                 </div>
             </div>
 
             <div class="about-section">
-                <h2>رؤيتنا ورسالتنا وهدفنا</h2>
+                <h2 data-lang="visionandgoal"></h2>
                 <div class="mvp-container">
                     <div class="mvp-item">
-                        <h3>رؤيتنا</h3>
-                        <p>أن نكون المنصة الأولى في سوريا التي تجمع وتنظم وتعلن عن جميع الفعاليات الثقافية والترفيهية في مختلف المحافظات السورية.</p>
+                        <h3 data-lang="vision"></h3>
+                        <p data-lang="visioncontent"></p>
                     </div>
                     <div class="mvp-item">
-                        <h3>رسالتنا</h3>
-                        <p>نشر الثقافة والفنون في المجتمع السوري ودعم المبدعين والمواهب من خلال توفير منصة سهلة الوصول للتعريف بفعالياتهم وأنشطتهم.</p>
+                        <h3 data-lang="mission"></h3>
+                        <p data-lang="missioncontent"></p>
                     </div>
                     <div class="mvp-item">
-                        <h3>هدفنا</h3>
-                        <p>إحياء الحركة الثقافية في سوريا بعد التحرير والانفتاح على العالم، وتعزيز السياحة الداخلية من خلال الفعاليات المتنوعة.</p>
+                        <h3 data-lang="goal"></h3>
+                        <p data-lang="goalcontent"></p>
                     </div>
                 </div>
             </div>
 
             <div class="about-section">
-                <h2>سياسات النشر والمعايير</h2>
+                <h2 data-lang="policytitle"></h2>
                 <div class="about-content">
-                    <p>نلتزم في دليل فعاليات سوريا بمجموعة من السياسات والمعايير التي تضمن جودة المحتوى وملائمته لجميع الفئات:</p>
+                    <p data-lang="policycontent"></p>
                     <ul class="policies-list">
-                        <li>نشر الفعاليات التي تلتزم بالأنظمة والقوانين السورية.</li>
-                        <li>التحقق من صحة المعلومات قبل نشرها.</li>
-                        <li>عدم نشر أي فعاليات تحتوي على محتوى مسيء أو غير أخلاقي.</li>
-                        <li>التركيز على الفعاليات التي تثري الثقافة والفنون في سوريا.</li>
-                        <li>إتاحة الفرصة للجميع لنشر فعالياتهم وفقاً لمعايير محددة.</li>
-                        <li>الحفاظ على الحيادية وعدم التحيز لأي جهة أو تيار.</li>
-                        <li>احترام حقوق الملكية الفكرية وذكر المصادر عند الاقتضاء.</li>
+                        <li data-lang="policy1"></li>
+                        <li data-lang="policy2"></li>
+                        <li data-lang="policy3"></li>
+                        <li data-lang="policy4"></li>
+                        <li data-lang="policy5"></li>
+                        <li data-lang="policy6"></li>
+                        <li data-lang="policy7"></li>
                     </ul>
                 </div>
             </div>
@@ -235,23 +255,24 @@
     </div>
 
     <!-- Footer -->
+    <!-- Footer -->
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h3>دليل فعاليات المدينة</h3>
-                <p>منصة متخصصة في عرض الفعاليات الثقافية والترفيهية والتعليمية في مختلف مدن سوريا.</p>
+                <h3 data-lang="site name"></h3>
+                <p data-lang="platform description"></p>
             </div>
             <div class="footer-section">
-                <h3>روابط سريعة</h3>
+                <h3 data-lang="quick links"></h3>
                 <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="events.html">الفعاليات</a></li>
-                    <li><a href="about.html">عن الدليل</a></li>
-                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="index.html" data-lang="home"></a></li>
+                    <li><a href="events.html" data-lang="events"></a></li>
+                    <li><a href="about.html" data-lang="about"></a></li>
+                    <li><a href="contact.html" data-lang="contact"></a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>تابعنا على</h3>
+                <h3 data-lang="follow us"></h3>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/Mofaexsy" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href=""><i class="fab fa-twitter"></i></a>
@@ -262,13 +283,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 دليل فعاليات المدينة. جميع الحقوق محفوظة.</p>
+            <p data-lang="copyright"></p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
-    <!-- Same as BS CSS in "head" I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Main JS -->
