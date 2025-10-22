@@ -8,8 +8,7 @@
     <link rel="icon" href="assets/img/CITY EVENTS icon.png" />
 
     <!-- Bootstrap CSS -->
-    <!-- But I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
     
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
@@ -241,15 +240,21 @@
 <body>
     <!-- Header -->
     <header>
-        <div class="header-container">
+        <div class="header-container" dir="rtl">
             <div class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html">الرئيسية</a></li>
-                <li><a href="events.html" class="active">الفعاليات</a></li>
-                <li><a href="about.html">عن الدليل</a></li>
-                <li><a href="contact.html">اتصل بنا</a></li>
+                <li>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="languageToggle">
+                        <label class="toggle-label" for="languageToggle" data-label-left="العربية" data-label-right="English"></label>
+                    </div>
+                </li>
+                <li><a href="index.html" data-lang="home"></a></li>
+                <li><a href="events.html"class="active" data-lang="events"></a></li>
+                <li><a href="about.html" data-lang="about"></a></li>
+                <li><a href="contact.html" data-lang="contact"></a></li>
             </ul>
             <a href="index.html" class="logo">
                 <img src="assets/img/CITY EVENTS Logo.png" />
@@ -259,12 +264,12 @@
 
     <!-- Landing Page -->
     <div id="landingPage" class="landing-page">
-        <!-- Emblem of Syria -->
+         <!-- Emblem of Syria -->
         <img src="assets/img/Emblem_of_Syria_2025.png" alt="Logo" class="emblem-of-syria">
         <!-- Syria Name -->
-        <h3 class="syria-name">الجمهورية العربية السورية</h3>
+        <h3 class="syria-name"> Syrian Arab Republic | الجمهورية العربية السورية</h3>
         <!-- Welcome Text -->
-        <h2 class="welcome-text">أهلاً وسهلاً بكم</h2>
+        <h2 class="welcome-text">Welcome | أهلاً وسهلاً بكم</h2>
         <!-- Platform Name in Arabic -->
         <h2 class="platform-name-ar">دليل فعاليات المدينة</h2>
         <!-- Platform Name in English -->
@@ -274,33 +279,33 @@
     <!-- Main Content -->
     <main>
         <div class="main-content" id="mainContent">
-            <h1 class="page-title">الفعاليات في سوريا</h1>
+            <h1 class="page-title" data-lang="syrian events"></h1>
 
             <!-- Filters Section -->
             <div class="filters">
                 <div class="filter-row">
                     <div class="filter-group">
-                        <label for="category">التصنيف</label>
+                        <label for="category" data-lang="categories"></label>
                         <select id="category">
-                            <option value="">جميع التصنيفات</option>
+                            <option value="" data-lang="all cats"></option>
                             <!-- Categories will be populated by JS -->
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label for="city">المدينة</label>
+                        <label for="city" data-lang="city"></label>
                         <select id="city">
-                            <option value="">جميع المدن</option>
+                            <option value="" data-lang="all cities"></option>
                             <!-- Cities will be populated by JS -->
                         </select>
                     </div>
                     <div class="filter-group">
-                        <label for="date">التاريخ</label>
+                        <label for="date" data-lang="date"></label>
                         <input type="date" id="date">
                     </div>
                 </div>
                 <div class="filter-buttons">
-                    <button class="filter-btn btn-apply" id="applyFilters">تطبيق الفلاتر</button>
-                    <button class="filter-btn btn-clear" id="clearFilters">مسح الفلاتر</button>
+                    <button class="filter-btn btn-apply" id="applyFilters" data-lang="apply filters"></button>
+                    <button class="filter-btn btn-clear" id="clearFilters" data-lang="clear filters"></button>
                 </div>
             </div>
 
@@ -321,20 +326,20 @@
     <footer>
         <div class="footer-container">
             <div class="footer-section">
-                <h3>دليل فعاليات المدينة</h3>
-                <p>منصة متخصصة في عرض الفعاليات الثقافية والترفيهية والتعليمية في مختلف مدن سوريا.</p>
+                <h3 data-lang="site name"></h3>
+                <p data-lang="platform description"></p>
             </div>
             <div class="footer-section">
-                <h3>روابط سريعة</h3>
+                <h3 data-lang="quick links"></h3>
                 <ul>
-                    <li><a href="index.html">الرئيسية</a></li>
-                    <li><a href="events.html">الفعاليات</a></li>
-                    <li><a href="about.html">عن الدليل</a></li>
-                    <li><a href="contact.html">اتصل بنا</a></li>
+                    <li><a href="index.html" data-lang="home"></a></li>
+                    <li><a href="events.html" data-lang="events"></a></li>
+                    <li><a href="about.html" data-lang="about"></a></li>
+                    <li><a href="contact.html" data-lang="contact"></a></li>
                 </ul>
             </div>
             <div class="footer-section">
-                <h3>تابعنا على</h3>
+                <h3 data-lang="follow us"></h3>
                 <div class="social-icons">
                     <a href="https://www.facebook.com/Mofaexsy" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a href=""><i class="fab fa-twitter"></i></a>
@@ -345,13 +350,12 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 دليل فعاليات المدينة. جميع الحقوق محفوظة.</p>
+            <p data-lang="copyright"></p>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
-    <!-- Same as BS CSS in "head" I am a Professional and Work with Standard Structure So Don't Need Bootstrap -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <!-- Main JS -->
@@ -359,18 +363,20 @@
     <!-- Custom JS -->
     <script>
         $(document).ready(function () {
+            tmp_toggle = document.getElementById('languageToggle');
+            tmp_lang = tmp_toggle.checked ? 'en' : 'ar';
             // Events page functionality
             function initEventsPage() {
                 // Populate category filter
-                var categories = [...new Set(eventsData.map(event => event.category))];
-                var categorySelect = $('#category');
-
+                
+                categories = [...new Set(eventsData[tmp_lang].map(event => event.category))];
+                categorySelect = $('#category');
                 categories.forEach(category => {
                     categorySelect.append(`<option value="${category}">${category}</option>`);
                 });
 
                 // Populate city filter
-                var cities = [...new Set(eventsData.map(event => event.city))];
+                var cities = [...new Set(eventsData[tmp_lang].map(event => event.city))];
                 var citySelect = $('#city');
 
                 cities.forEach(city => {
@@ -378,7 +384,7 @@
                 });
 
                 // Display all events initially
-                displayEvents(eventsData);
+                displayEvents(eventsData[tmp_lang]);
 
                 // Apply filters
                 $('#applyFilters').click(function () {
@@ -386,7 +392,7 @@
                     var city = $('#city').val();
                     var date = $('#date').val();
 
-                    var filteredEvents = eventsData.filter(event => {
+                    var filteredEvents = eventsData[tmp_lang].filter(event => {
                         var matchCategory = !category || event.category === category;
                         var matchCity = !city || event.city === city;
                         var matchDate = !date || event.date === date;
@@ -402,7 +408,7 @@
                     $('#category').val('');
                     $('#city').val('');
                     $('#date').val('');
-                    displayEvents(eventsData);
+                    displayEvents(eventsData[tmp_lang]);
                 });
             }
 
@@ -430,7 +436,7 @@
                                     ${event.city}
                                 </div>
                                 <span class="event-category">${event.category}</span>
-                                <a href="event.html?id=${event.id}" class="event-btn">التفاصيل</a>
+                                <a href="event.html?id=${event.id}" class="event-btn">${tmp_lang=="en"?"details":" التفاصيل"}</a>
                             </div>
                         </div>
                     `;
@@ -440,17 +446,22 @@
             }
 
             // Initialize events page when events data is available
-            if (typeof eventsData !== 'undefined') {
+            if (typeof eventsData[tmp_lang] !== 'undefined') {
                 initEventsPage();
             } else {
                 // Wait for main.js to load
                 var checkData = setInterval(function () {
-                    if (typeof eventsData !== 'undefined') {
+                    if (typeof eventsData[tmp_lang] !== 'undefined') {
                         clearInterval(checkData);
                         initEventsPage();
                     }
                 }, 100);
             }
+            tmp_toggle.addEventListener('change', () => {
+                tmp_lang = toggle.checked ? 'en' : 'ar';
+                initEventsPage();
+                displayEvents(eventsData[tmp_lang]);
+            });
         });
     </script>
 </body>

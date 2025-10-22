@@ -44,9 +44,59 @@
     padding: 0;
     box-sizing: border-box;
 }
+/*Change font based on language*/
+html[lang="en"]{
+    font-family: "itf Qomra", sans-serif;
+}
+html[lang="ar"]{
+    font-family: "itf Qomra Arabic", sans-serif;
+}
+.form-check-input{
+    cursor: pointer;
+}
+.toggle-label {
+    display: inline-block;
+    width: 10%;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+  }
 
+  .toggle-label::before {
+    content: attr(data-label-left);
+    position: absolute;
+    left: 1px;
+    top: 5px;
+    font-size: 14px;
+    color: #ffffff;
+    transition: opacity 0.3s;
+  }
+
+  .toggle-label::after {
+    content: attr(data-label-right);
+    position: absolute;
+    left: 1px;
+    top: 5px;
+    font-size: 14px;
+    color: #ffffff;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  #languageToggle:checked + .toggle-label::before {
+    opacity: 0;
+  }
+
+  #languageToggle:checked + .toggle-label::after {
+    opacity: 1;
+  }
+  
+  .form-check-input:checked {
+        background-color: #F59E0B; /* Change to your desired color */
+        border-color: #F59E0B; /* Optional: change border color */
+    }
 body {
-    font-family: 'itf Qomra Arabic', sans-serif;
+    /*font-family: 'itf Qomra Arabic', sans-serif;*/
     font-weight: 400;
     line-height: 1.6;
     color: var(--text-primary);
@@ -125,6 +175,7 @@ header {
     list-style: none;
     margin: 0;
     padding: 0;
+    
 }
 
     .nav-menu li {
@@ -187,15 +238,15 @@ header {
         padding-top: 20px;
         z-index: 1001;
     }
-
         .nav-menu.active {
             right: 0;
             top: 4.5rem
         }
-
+        
         .nav-menu li {
             margin: 15px 0;
             width: 100%;
+            place-items: center;
         }
 
         .nav-menu a {
@@ -223,6 +274,12 @@ header {
         right: 0;
         top: 4rem
     }
+    .nav-menu li {
+            margin: 15px 0;
+            width: 100%;
+            place-items: center;
+        }
+    
 }
 
 /* LANDING PAGE STYLES */
@@ -422,6 +479,10 @@ footer {
             width: 50px;
             height: 2px;
             background-color: var(--accent-color);
+        }
+        html[dir="ltr"] .footer-section h3::after {
+        right: auto;
+        left: 0;
         }
 
     .footer-section ul {
